@@ -1,0 +1,50 @@
+# Created October 2017
+
+NGEN_SEASON:  1   # 1 survey defined by PEAKMJD range, z-range and solid angle
+#NGENTOT_LC:  1000  # alternative to fix number generated
+
+# name of version to appear in $SNDATA_ROOT/SIM
+GENVERSION:  GW170817_AT2017gfo_LSST_WFD
+
+# define SED model and rate model
+GENMODEL:  $SNDATA_ROOT/models/SIMSED/SIMSED.GW170817_AT2017gfo 
+DNDZ: POWERLAW  1.0E-6  0.0  # volumetric rate = 1.0E-6/Mpc^3/yr (no z-dependence)
+
+GENFILTERS:   ugrizY
+
+# define 3 quantities which determine NGEN
+GENRANGE_PEAKMJD:  59740 63200
+GENRANGE_REDSHIFT: 0.004  0.11
+SOLID_ANGLE:  6.0            # approx solid angle, steridians
+
+GENRANGE_TREST:    -10 30  # days
+GENSOURCE: RANDOM
+RANSEED:   689541
+
+# cadence library
+#SIMLIB_FILE:  $SNDATA_ROOT/simlib/minion_1016_WFD.simlib
+SIMLIB_FILE:  simlibs/new_twice_2.5_50_2_110.simlib
+
+# filter transmission curves and calibration info
+KCOR_FILE:    $SNDATA_ROOT/kcor/LSST/2017-04_approx/kcor_LSST.fits
+
+# Effic vs. SNR for detetctions
+SEARCHEFF_PIPELINE_FILE: SEARCHEFF_PIPELINE_LSST.DAT
+APPLY_SEARCHEFF_OPT:  1
+
+#APPLY_CUTWIN_OPT:  1
+#CUTWIN_EPOCHS_SNRMIN:  4 30 grizY
+#CUTWIN_SNRMAX:         4 grizY 2 -20 60
+
+# no need to convert SED into binary 
+SIMSED_USE_BINARY:  0
+
+FORMAT_MASK:  2  # 2=TEXT  32=FITS
+
+# variables to include in one-row per SN text dump
+SIMGEN_DUMPALL:  23
+  CID LIBID GENTYPE  SNTYPE  ZCMB  RA DECL MWEBV MU
+  PEAKMJD SNRMAX SNRMAX2 SNRMAX3 
+  SNRMAX_u SNRMAX_g SNRMAX_r SNRMAX_i SNRMAX_z SNRMAX_Y
+  TIME_ABOVE_SNRMIN  NOBS CUTMASK  SIM_SEARCHEFF_MASK
+

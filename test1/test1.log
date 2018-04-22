@@ -1,0 +1,482 @@
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+   Full command: snlc_sim.exe SIMGEN_GW170817_AT2017gfo_LSST.INPUT SIMGEN_DUMP 0 
+
+ SNDATA_ROOT = /data/des41.b/data/SNDATA_ROOT 
+ SNANA_DIR   = /data/des41.b/data/kessler/snana/SNANA_v10_48k 
+  
+  ######################################################## 
+     INIT_SNVAR: Init variables.
+  ######################################################## 
+  
+   Allocate 12.50 MB for CIDMASK array (to check duplicates)
+   HOST MACHINE =    ()
+   SNDATA_ROOT = /data/des41.b/data/SNDATA_ROOT
+   SNANA_DIR = /data/des41.b/data/kessler/snana/SNANA_v10_48k    (v10_48k )
+   sizeof(INPUTS) =   0.477 MB 
+   sizeof(GENLC)  =   7.990 MB 
+ --------------------------------------------------------
+  Read user input file: SIMGEN_GW170817_AT2017gfo_LSST.INPUT 
+
+  PROCESS COMMAND LINE ARG: SIMGEN_DUMP 
+
+ WARNING[prep_user_input]: 
+	 NGEN_LC=0 & NGENTOT_LC=0 
+
+	 SIMLIB file        : /data/des41.b/data/SNDATA_ROOT/simlib/LSST_WFD_COADD.SIMLIB   (start LIBID=0)
+	 Generation Version : GW170817_AT2017gfo_LSST_WFD 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.GW170817_AT2017gfo 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.300, 0.700,    W= -1.00   H0= 70.0 
+	 KCOR  file : /data/des41.b/data/SNDATA_ROOT/kcor/LSST/2017-04_approx/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 689541 
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DECL(deg): -360.000 to  360.000 
+	 Gen-Range for REDSHIFT :    0.004 to    0.220  (sigma= 0.0000) 
+	 Gen-Range for PEAKMJD  :  59740.0 to  63200.0  
+	 Gen-Range for Trest    :    -10.0 to     30.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : 0.00 to 0.00  (dN/dAv = exp(-AV/0.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 2.10 to 4.10 
+	 AB mag offsets (ugrizY) : 
+	 MODEL mag offsets (ugrizY) :    0.00   0.00   0.00   0.00   0.00   0.00
+
+
+ ****************************************************************** 
+   SIMLIB_open(): Open conditions library for simulation.  
+	 Opened /data/des41.b/data/SNDATA_ROOT/simlib/LSST_WFD_COADD.SIMLIB 
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB telescope : LSST 
+	 SIMLIB created by: rbiswas 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ *********************************** 
+   SIMULATED VOLUME, TIME, RATE(POWERLAW)
+	 Survey dOmega  = 6.0000e+00 steradians  ( 1.90986 PI) 
+	 Redshift range =  0.0040 -  0.2200
+	 <redsfhit>     =  0.1632  (volume-weighted) 
+	 Survey Volume  = 1.4286e+09  sr*(MPc/h70)^3 
+	 Survey Time    =  9.4795  years/season 
+	 Co-moving Time =  8.1498  years/season  [ T/(1+<z>) ] 
+	 Co-moving V*T  = 1.1643e+10  sr*(MPc/h70)^3 * yr / season 
+	 POWERLAW MODEL:  1.00e-06*(1+z)^0.00  (0.0 < z < 4.0) 
+	    MODEL-RATE(z=0.00) = 1.000e-06/Mpc^3/yr    
+	    MODEL-RATE(z=0.20) = 1.000e-06/Mpc^3/yr    
+	 Number of SN per season =  1.166e+04 
+	 NGEN_SEASON=1.00 --> NGENTOT_LC=11659 
+
+  
+  ============================================= 
+  RDKCOR_FITS: Read Calib/Kcor tables.
+    Opened /data/des41.b/data/SNDATA_ROOT/kcor/LSST/2017-04_approx/kcor_LSST.fits
+    with Blocksize=  1   and ISTAT=     0
+  
+      RDKCOR_FITS_HEAD    
+         Read VERSION      =   3  (kcor.exe version)
+         Read NPRIM        =   1  primary refs
+         Read NFILTERS     =   6  filters
+         Read NKCOR        =   0  K-COR tables
+      RDKCOR_FITS_ZPT 
+      RDKCOR_FITS_SNSED 
+      RDKCOR_FITS_KCOR  
+      RDKCOR_FITS_MAGS  
+      RDKCOR_FITS_FILTERS 
+      RDKCOR_FITS_PRIMARYSED  
+      FTCLOSE  
+         ---------------------- 
+         !!! RDKCOR_SUMMARY !!! 
+         ---------------------- 
+    Primary spectrum: AB                                      
+  
+  FILTER SUMMARY (RDKCOR) : 
+  internal                    LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ------------------------------------------------------------------
+  01 LSST-u                  3671  198      0-    0   0.000  0.000
+  02 LSST-g                  4827  424      0-    0   0.000  0.000
+  03 LSST-r                  6223  406      0-    0   0.000  0.000
+  04 LSST-i                  7546  376      0-    0   0.000  0.000
+  05 LSST-z                  8691  305      0-    0   0.000  0.000
+  06 LSST-Y                  9710  338      0-    0   0.000  0.000
+ ------------------------------------------------------------------
+    NFILTDEF[SURVEY,REST] =    6   0
+  
+  
+   RDKCOR: Done. 
+  ---------------------------------------------- 
+  
+    Zeropoint offsets (ZPOFF) from : KCOR file
+         Will apply net MAGOBS_SHIFT_ZP(u) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(g) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(r) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(i) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(z) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(Y) =  0.0000
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3670.7 + 0)   3050- 4090( 10)   0.000  12.624  
+   id=02 (      LSST-g)   ( 4826.8 + 0)   3860- 5670( 10)   0.000  14.483  
+   id=03 (      LSST-r)   ( 6223.2 + 0)   5370- 7060( 10)   0.000  14.321  
+   id=04 (      LSST-i)   ( 7546.0 + 0)   6760- 8330( 10)   0.000  13.995  
+   id=05 (      LSST-z)   ( 8690.9 + 0)   8030- 9390( 10)   0.000  13.609  
+   id=06 (      LSST-Y)   ( 9710.4 + 0)   9080-11000( 10)   0.000  12.781  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from SIMSED_PATHMODEL = 
+	  /data/des41.b/data/SNDATA_ROOT/models/SIMSED/SIMSED.GW170817_AT2017gfo
+
+
+ Read list of SEDs and parameters from 
+  /data/des41.b/data/SNDATA_ROOT/models/SIMSED/SIMSED.GW170817_AT2017gfo/SED.INFO 
+	 Found '     KNINDEX' with  1 bins from    1.000 to    1.000
+  Read  Read 1st SIMSED to get NDAY  SED  from : 
+    /data/des41.b/data/SNDATA_ROOT/models/SIMSED/SIMSED.GW170817_AT2017gfo/DECAM+Gemini.SED 
+    shiftPeakDay_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+	 Nepoch(1st SED) = 39 => allocate 49 epochs in SEDMODEL 
+
+ Finished reading parameters for 1 SEDs 
+   SED FLUX_SCALE = 1.000000e+00 
+   SED MAG_ERR    =  0.10 
+   Read Flux errors :  NO 
+
+  malloc_FLUXTABLE_SEDMODEL : allocated   1.08 Mb of memory for integral-flux tables. 
+		 Tables include lambda powers up to 0 .
+		 Tables include 191 log10(Z)-bins: 0.003 <= Z <= 0.222 .
+		 Zero entire SEDMODEL flux table (134400 entries). 
+
+  Read  (ised=1/1)  SED  from : 
+    /data/des41.b/data/SNDATA_ROOT/models/SIMSED/SIMSED.GW170817_AT2017gfo/DECAM+Gemini.SED 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+	 Trest:   0.00 to  19.00     LAMBDA:  2500 to 14990 A 
+
+  init_genmag_SIMSED : Done. 
+	 Load baggage parameter 'KNINDEX' 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+	 Opened : SEARCHEFF_PIPELINE_LSST.DAT 
+   Read efficiency curves: 
+	 Epoch SEARCH_EFF(u) =  1.00 at SNR = 15.00 
+	 Epoch SEARCH_EFF(u) =  0.46 at SNR =  5.50 
+	 Epoch SEARCH_EFF(g) =  1.00 at SNR = 15.00 
+	 Epoch SEARCH_EFF(g) =  0.46 at SNR =  5.50 
+	 Epoch SEARCH_EFF(r) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(r) =  0.43 at SNR =  5.00 
+	 Epoch SEARCH_EFF(i) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(i) =  0.54 at SNR =  5.50 
+	 Epoch SEARCH_EFF(z) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(z) =  0.47 at SNR =  5.00 
+	 Epoch SEARCH_EFF(Y) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(Y) =  0.47 at SNR =  5.00 
+	 Opened : /data/des41.b/data/SNDATA_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LOGIC.DAT 
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /data/des41.b/data/SNDATA_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LOGIC.DAT 
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs withing 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> skip. 
+
+  Optional SEARCHEFF_zHOST_FILE not found -> skip. 
+
+ ****************************************************************** 
+    Fill comments for README doc-file  
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open GW170817_AT2017gfo_LSST_WFD.DUMP
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 7.386863e+61 at z =    0.220 
+	 Finished generating        1 of 11659 (CID=     1) 
+	 Finished generating      100 of 11659 (CID=   100) 
+	 Finished generating      200 of 11659 (CID=   200) 
+	 Finished generating      300 of 11659 (CID=   300) 
+	 Finished generating      400 of 11659 (CID=   400) 
+	 Finished generating      500 of 11659 (CID=   500) 
+	 Finished generating      600 of 11659 (CID=   600) 
+	 Finished generating      700 of 11659 (CID=   700) 
+	 Finished generating      800 of 11659 (CID=   800) 
+	 Finished generating      900 of 11659 (CID=   900) 
+	 Finished generating     1000 of 11659 (CID=  1000) 
+	 Finished generating     1100 of 11659 (CID=  1100) 
+	 Finished generating     1200 of 11659 (CID=  1200) 
+	 Finished generating     1300 of 11659 (CID=  1300) 
+	 Finished generating     1400 of 11659 (CID=  1400) 
+	 Finished generating     1500 of 11659 (CID=  1500) 
+	 Finished generating     1600 of 11659 (CID=  1600) 
+	 Finished generating     1700 of 11659 (CID=  1700) 
+	 Finished generating     1800 of 11659 (CID=  1800) 
+	 Finished generating     1900 of 11659 (CID=  1900) 
+	 Finished generating     2000 of 11659 (CID=  2000) 
+	 Finished generating     2100 of 11659 (CID=  2100) 
+	 Finished generating     2200 of 11659 (CID=  2200) 
+	 Finished generating     2300 of 11659 (CID=  2300) 
+	 Finished generating     2400 of 11659 (CID=  2400) 
+	 Finished generating     2500 of 11659 (CID=  2500) 
+	 Finished generating     2600 of 11659 (CID=  2600) 
+	 Finished generating     2700 of 11659 (CID=  2700) 
+	 Finished generating     2800 of 11659 (CID=  2800) 
+	 Finished generating     2900 of 11659 (CID=  2900) 
+	 Finished generating     3000 of 11659 (CID=  3000) 
+	 Finished generating     3100 of 11659 (CID=  3100) 
+	 Finished generating     3200 of 11659 (CID=  3200) 
+	 Finished generating     3300 of 11659 (CID=  3300) 
+	 Finished generating     3400 of 11659 (CID=  3400) 
+	 Finished generating     3500 of 11659 (CID=  3500) 
+	 Finished generating     3600 of 11659 (CID=  3600) 
+	 Finished generating     3700 of 11659 (CID=  3700) 
+	 Finished generating     3800 of 11659 (CID=  3800) 
+	 Finished generating     3900 of 11659 (CID=  3900) 
+	 Finished generating     4000 of 11659 (CID=  4000) 
+	 Finished generating     4100 of 11659 (CID=  4100) 
+	 Finished generating     4200 of 11659 (CID=  4200) 
+	 Finished generating     4300 of 11659 (CID=  4300) 
+	 Finished generating     4400 of 11659 (CID=  4400) 
+	 Finished generating     4500 of 11659 (CID=  4500) 
+	 Finished generating     4600 of 11659 (CID=  4600) 
+	 Finished generating     4700 of 11659 (CID=  4700) 
+	 Finished generating     4800 of 11659 (CID=  4800) 
+	 Finished generating     4900 of 11659 (CID=  4900) 
+	 Finished generating     5000 of 11659 (CID=  5000) 
+	 Finished generating     5100 of 11659 (CID=  5100) 
+	 Finished generating     5200 of 11659 (CID=  5200) 
+	 Finished generating     5300 of 11659 (CID=  5300) 
+	 Finished generating     5400 of 11659 (CID=  5400) 
+	 Finished generating     5500 of 11659 (CID=  5500) 
+	 Finished generating     5600 of 11659 (CID=  5600) 
+	 Finished generating     5700 of 11659 (CID=  5700) 
+	 Finished generating     5800 of 11659 (CID=  5800) 
+	 Finished generating     5900 of 11659 (CID=  5900) 
+	 Finished generating     6000 of 11659 (CID=  6000) 
+	 Finished generating     6100 of 11659 (CID=  6100) 
+	 Finished generating     6200 of 11659 (CID=  6200) 
+	 Finished generating     6300 of 11659 (CID=  6300) 
+	 Finished generating     6400 of 11659 (CID=  6400) 
+	 Finished generating     6500 of 11659 (CID=  6500) 
+	 Finished generating     6600 of 11659 (CID=  6600) 
+	 Finished generating     6700 of 11659 (CID=  6700) 
+	 Finished generating     6800 of 11659 (CID=  6800) 
+	 Finished generating     6900 of 11659 (CID=  6900) 
+	 Finished generating     7000 of 11659 (CID=  7000) 
+	 Finished generating     7100 of 11659 (CID=  7100) 
+	 Finished generating     7200 of 11659 (CID=  7200) 
+	 Finished generating     7300 of 11659 (CID=  7300) 
+	 Finished generating     7400 of 11659 (CID=  7400) 
+	 Finished generating     7500 of 11659 (CID=  7500) 
+	 Finished generating     7600 of 11659 (CID=  7600) 
+	 Finished generating     7700 of 11659 (CID=  7700) 
+	 Finished generating     7800 of 11659 (CID=  7800) 
+	 Finished generating     7900 of 11659 (CID=  7900) 
+	 Finished generating     8000 of 11659 (CID=  8000) 
+	 Finished generating     8100 of 11659 (CID=  8100) 
+	 Finished generating     8200 of 11659 (CID=  8200) 
+	 Finished generating     8300 of 11659 (CID=  8300) 
+	 Finished generating     8400 of 11659 (CID=  8400) 
+	 Finished generating     8500 of 11659 (CID=  8500) 
+	 Finished generating     8600 of 11659 (CID=  8600) 
+	 Finished generating     8700 of 11659 (CID=  8700) 
+	 Finished generating     8800 of 11659 (CID=  8800) 
+	 Finished generating     8900 of 11659 (CID=  8900) 
+	 Finished generating     9000 of 11659 (CID=  9000) 
+	 Finished generating     9100 of 11659 (CID=  9100) 
+	 Finished generating     9200 of 11659 (CID=  9200) 
+	 Finished generating     9300 of 11659 (CID=  9300) 
+	 Finished generating     9400 of 11659 (CID=  9400) 
+	 Finished generating     9500 of 11659 (CID=  9500) 
+	 Finished generating     9600 of 11659 (CID=  9600) 
+	 Finished generating     9700 of 11659 (CID=  9700) 
+	 Finished generating     9800 of 11659 (CID=  9800) 
+	 Finished generating     9900 of 11659 (CID=  9900) 
+	 Finished generating    10000 of 11659 (CID= 10000) 
+	 Finished generating    10100 of 11659 (CID= 10100) 
+	 Finished generating    10200 of 11659 (CID= 10200) 
+	 Finished generating    10300 of 11659 (CID= 10300) 
+	 Finished generating    10400 of 11659 (CID= 10400) 
+	 Finished generating    10500 of 11659 (CID= 10500) 
+	 Finished generating    10600 of 11659 (CID= 10600) 
+	 Finished generating    10700 of 11659 (CID= 10700) 
+	 Finished generating    10800 of 11659 (CID= 10800) 
+	 Finished generating    10900 of 11659 (CID= 10900) 
+	 Finished generating    11000 of 11659 (CID= 11000) 
+	 Finished generating    11100 of 11659 (CID= 11100) 
+	 Finished generating    11200 of 11659 (CID= 11200) 
+	 Finished generating    11300 of 11659 (CID= 11300) 
+	 Finished generating    11400 of 11659 (CID= 11400) 
+	 Finished generating    11500 of 11659 (CID= 11500) 
+	 Finished generating    11600 of 11659 (CID= 11600) 
+
+ ****************************************************************** 
+    Done generating 11659 SN lightcurves from RANDOM source.  
+	 (11659 lightcurves requested => 130 were written) 
+
+ ****************************************************************** 
+    Fill comments for README doc-file  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+ USER COMMENT: BLANK 
+
+ BRIEF_DESCRIPTION: simulate RANDOM SNe with GENMODEL = SIMSED.GW170817_AT2017gfo 
+
+  HOST MACHINE: (null) 
+  USERNAME:  marcelle 
+  SNDATA_ROOT:  /data/des41.b/data/SNDATA_ROOT 
+  SNANA_DIR:    /data/des41.b/data/kessler/snana/SNANA_v10_48k 
+  Current Dir:  /data/des41.a/data/marcelle/snana-test/test1 
+
+ FULL_DESCRIPTION: 
+	 SIMLIB filename  : /data/des41.b/data/SNDATA_ROOT/simlib/LSST_WFD_COADD.SIMLIB (start at LIBID=0) 
+	 SIMLIB SURVEY    : LSST  (TELESCOPE=LSST, MINOBS=1) 
+	 SIMLIB UNITS     : PIXEL_SIGMA for PSF,  ADU_PER_SQPIXEL for SKYSIG 
+	 FUDGEOPT_FLUXERR : 0 
+	 NEWMJD_DIF       : 10.08  minutes (defines trigger epoch)
+	 Generation VERSION: GW170817_AT2017gfo_LSST_WFD 
+	 Generation source : RANDOM 
+	 Generation FILTERS: ugrizY 
+	 KCOR lookup tables: /data/des41.b/data/SNDATA_ROOT/kcor/LSST/2017-04_approx/kcor_LSST.fits 
+	 Flux-smearing is ON 
+	 Zeropt-smearing is ON 
+	 Host-galaxy shot-noise  is OFF 
+	 Host-galaxy image-noise  is OFF 
+	 MilkyWay extinction  is ON  
+	    Color law: CCM89+ODonell94  (OPT_MWCOLORLAW=94) 
+	    E(B-V): FILE value (SIMLIB or data header)   (OPT_MWEBV=1)
+	    sigma(MWEBV) = 0.16*MWEBV + 0.00  
+	    shift(MWEBV) = 0.000 mag 
+
+ *********************************** 
+   SIMULATED VOLUME, TIME, RATE(POWERLAW)
+	 Survey dOmega  = 6.0000e+00 steradians  ( 1.90986 PI) 
+	 Redshift range =  0.0040 -  0.2200
+	 <redsfhit>     =  0.1632  (volume-weighted) 
+	 Survey Volume  = 1.4286e+09  sr*(MPc/h70)^3 
+	 Survey Time    =  9.4795  years/season 
+	 Co-moving Time =  8.1498  years/season  [ T/(1+<z>) ] 
+	 Co-moving V*T  = 1.1643e+10  sr*(MPc/h70)^3 * yr / season 
+	 POWERLAW MODEL:  1.00e-06*(1+z)^0.00  (0.0 < z < 4.0) 
+	    MODEL-RATE(z=0.00) = 1.000e-06/Mpc^3/yr    
+	    MODEL-RATE(z=0.20) = 1.000e-06/Mpc^3/yr    
+	 Number of SN per season =  1.166e+04 
+	 NGEN_SEASON=1.00 --> NGENTOT_LC=11659 
+
+
+  GENERATION RANGES: 
+	 ==> Override gen-values with SIMLIB header values.
+	 Generate Redshift :  0.004 to  0.220  using  SIMLIB values. 
+	 REDSHIFT_FINAL is ZCMB_GEN smeared by :  0.00000 
+	 Peculiar Velocity Gaussian sigma: 0.0 km/sec
+	 ugrizY   AB   offsets :  0.000  0.000  0.000  0.000  0.000  0.000 
+	 ugrizY  MODEL offsets :  0.000  0.000  0.000  0.000  0.000  0.000 
+	 ugrizY  exposure times: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 
+	 RA       : -360.00 to 360.00  deg
+	 PEAKMJD  :  59740.0 to  63200.0   
+	 sigma-smear(SEARCH_PEAKMJD)  :  0.00 days 
+	 Trest    :   -10.00 to    30.00  days 
+	 RISETIME-SHIFT(days) SIGMA(lo,hi) : 0.0 , 0.0  (Mean= 0.0) 
+	 FALLTIME-SHIFT(days) SIGMA(lo,hi) : 0.0 , 0.0  (Mean= 0.0) 
+
+   SIMSED.GW170817_AT2017gfo model parameters: 
+
+  Z-dependent SN-parameter shifts:  None. 
+
+  Intrinsic MAG-smearing models (sigma clip -3.0 to  3.0) : 
+   Model 1: Coherent MAG-smearing (GENMAG_SMEAR) :  0.000  
+   Model 2: passband MAG-smearing is OFF 
+   Model 3:  model-smear is OFF  
+   Model 4: intrinsic scatter matrix is OFF 
+   Model 5: GENMAG_SMEAR_USRFUN is  OFF 
+
+  AVWARP_OVERFLOWS:  NONE. 
+
+  Cosmology Parameters: 
+	 H0 =  70.00 km/s per MPc 
+	 Omega_{M,L} =  0.30,  0.70   w = -1.00  
+
+ --------------------------------------------------- 
+  Software-Pipeline Search Efficiency (MINOBS=2) from 
+	 SEARCHEFF_PIPELINE_LSST.DAT
+	 Epoch SEARCH_EFF(u) =  1.00 at SNR = 15.00 
+	 Epoch SEARCH_EFF(u) =  0.46 at SNR =  5.50 
+	 Epoch SEARCH_EFF(g) =  1.00 at SNR = 15.00 
+	 Epoch SEARCH_EFF(g) =  0.46 at SNR =  5.50 
+	 Epoch SEARCH_EFF(r) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(r) =  0.43 at SNR =  5.00 
+	 Epoch SEARCH_EFF(i) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(i) =  0.54 at SNR =  5.50 
+	 Epoch SEARCH_EFF(z) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(z) =  0.47 at SNR =  5.00 
+	 Epoch SEARCH_EFF(Y) =  1.00 at SNR = 50.00 
+	 Epoch SEARCH_EFF(Y) =  0.47 at SNR =  5.00 
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /data/des41.b/data/SNDATA_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LOGIC.DAT 
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs withing 0.007 days
+
+  Spectroscopic Efficiency : 
+	 No spec-eff option specified ==> 100% efficiency. 
+
+  Unconfirmed zHOST Efficiency : 100% 
+
+  APPLY_SEARCHEFF_OPT:  1 => Apply only PIPELINE efficiency (not SPEC-eff) 
+  SNTYPE(Ia) = 1(SPEC)  and 101(PHOT) 
+ --------------------------------------------------- 
+
+  HOSTLIB Summary: None. 
+
+  Fudges on SIMLIB Seeing Conditions: NONE. 
+
+ ============ END OF SIMULATION SUMMARY ============== 
+
+  Random Number Sync: 
+	 RANDOM SEED: 689541   (RANLIST_START_GENSMEAR: 1)
+	 FIRST/LAST Random Number (List=1): 0.483324 0.728371  
+	 FIRST/LAST Random Number (List=2): 0.612414 0.503277  
+
+  Generation Statistics (total CPU=0.7 minutes): 
+	 Generated 11659 simulated light curves (278/sec) 
+	 Wrote       130 simulated light curves to SNDATA files (3/sec). 
+  Spectroscopic-type: 130 -> 130 (before -> after cuts)
+  Photometric-type:   0 -> 0 (before -> after cuts)
+  Rejection Statistics: 
+	     0 rejected by GENRANGEs 
+	     0 rejected by GENRANGE_PEAKMAG 
+	 11529 rejected by SEARCH-TRIGGER 
+	     0 rejected by CUTWIN-SELECTION 
+  SEARCH+CUTS Efficiency:  0.0112 +-  0.0010 
+
+  Number of SNe per season AFTER CUTS :    130 +-    11 
+
+	 ===== END OF README FILE ====== 
+
+ DONE with snlc_sim.
