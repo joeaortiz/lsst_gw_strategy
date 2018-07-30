@@ -1,5 +1,0 @@
-t1 = 2, t2 = 28, max airmass = 2, max slew angle = 70 
-
-Number of KN processed: 1697 
-
-Swap made, KN already scheduled to be observed in next t1 days, KN is not visible in next t1 days, No observations when KN is visible in next t1 days, Closest observation has max slew angle too large, No observation in next t2 days close to KN 
